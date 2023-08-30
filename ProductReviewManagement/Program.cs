@@ -130,7 +130,8 @@ namespace ProductReviewManagement
             });
             //operations.Display(list);
             //operations.RetrieveTopRecords(list);
-            operations.RetrieveAllRecordsWithCondition(list);
+            //operations.RetrieveAllRecordsWithCondition(list);
+            operations.UsingGroupBy(list);
         }
     }
 }
