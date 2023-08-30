@@ -131,7 +131,8 @@ namespace ProductReviewManagement
             //operations.Display(list);
             //operations.RetrieveTopRecords(list);
             //operations.RetrieveAllRecordsWithCondition(list);
-            operations.UsingGroupBy(list);
+            //operations.UsingGroupBy(list);
+            operations.RetrieveProductIdAndReview(list);
         }
     }
 }
