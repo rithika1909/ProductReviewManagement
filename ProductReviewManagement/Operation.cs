@@ -59,6 +59,29 @@ namespace ProductReviewManagement
                     + item.Field<bool>("isLike"));
             }
         }
+        public void RetreiveRecordsFromDataTable(List<Product> list)
+        {
+            var result = table.AsEnumerable().Where(x => x.Field<bool>("IsLike").Equals(true));
+            foreach(var item in result.AsEnumerable())
+            {
+                Console.WriteLine(item.Field<int>("PoductId"));
+            }
+        }
+        public void AvgRating(List<Product> list)
+        {
+            var result = list.Average(x => x.Rating);
+            Console.WriteLine(result);
+        }
+        public void RetreiveUsingReview(List<Product> list)
+        {
+            var result = list.Where(x => x.Review.Equals("Nice"));
+            Display(result.ToList());
+        }
+        public void RetreiveUsingRating(List<Product> list)
+        {
+            var result = list.Where(x => x.UserID.Equals(10)).OrderBy(x => x.Rating);
+            Display(result.ToList());
+        }
         public void Display(List<Product> list)
         {
             foreach (var data in list)
